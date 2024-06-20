@@ -1,1 +1,1 @@
-Sitemap: http://traffic.phys.cs.is.nagoya-u.ac.jp/~mstf/sitemap.xml
+Sitemap: https://mathematical-society-of-traffic-flow.github.io/symposium/sitemap.xml
