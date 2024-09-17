@@ -2719,11 +2719,6 @@ var store = [{
         "tags": [],
         "url": "https://mathematical-society-of-traffic-flow.github.io/symposium/submission/"
       },{
-        "title": "test",
-        "excerpt":"yeah ","categories": [],
-        "tags": [],
-        "url": "https://mathematical-society-of-traffic-flow.github.io/symposium/test/"
-      },{
         "title": "Photo'07 - MSTF -",
         "excerpt":"第13回交通流のシミュレーションシンポジウムの様子  ","categories": [],
         "tags": [],
