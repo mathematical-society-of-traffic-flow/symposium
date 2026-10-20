@@ -1,1 +1,1 @@
-Sitemap: https://mathematical-society-of-traffic-flow.github.io/symposium/sitemap.xml
+Sitemap: http://localhost:4000/symposium/sitemap.xml
