@@ -22,15 +22,15 @@
 <meta property="og:locale" content="ja" />
 <meta name="description" content="ダウンロード" />
 <meta property="og:description" content="ダウンロード" />
-<link rel="canonical" href="http://localhost:4000/symposium/mstfstyle/" />
-<meta property="og:url" content="http://localhost:4000/symposium/mstfstyle/" />
+<link rel="canonical" href="https://mathematical-society-of-traffic-flow.github.io/symposium/mstfstyle/" />
+<meta property="og:url" content="https://mathematical-society-of-traffic-flow.github.io/symposium/mstfstyle/" />
 <meta property="og:site_name" content="The Mathematical Society of TrafficFlow" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-10-20T15:47:48+09:00" />
+<meta property="article:published_time" content="2026-10-28T13:52:33+09:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="交通流数理研究会スタイルファイル" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-10-20T15:47:48+09:00","datePublished":"2026-10-20T15:47:48+09:00","description":"ダウンロード","headline":"交通流数理研究会スタイルファイル","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/symposium/mstfstyle/"},"url":"http://localhost:4000/symposium/mstfstyle/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-10-28T13:52:33+09:00","datePublished":"2026-10-28T13:52:33+09:00","description":"ダウンロード","headline":"交通流数理研究会スタイルファイル","mainEntityOfPage":{"@type":"WebPage","@id":"https://mathematical-society-of-traffic-flow.github.io/symposium/mstfstyle/"},"url":"https://mathematical-society-of-traffic-flow.github.io/symposium/mstfstyle/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -121,165 +121,298 @@
         <div class="e-content">
           <h2 id="ダウンロード">ダウンロード</h2>
 
-<h3 id="スタイルファイル">スタイルファイル</h3>
-
-<h4 id="uplatexとluatex用スタイルファイル">uplatexとLuaTex用スタイルファイル</h4>
+<h3 id="最新版lualatexuplatexxelatex用ver-103">最新版：LuaLaTeX・upLaTeX・XeLaTeX用（Ver. 1.03）</h3>
 
 <ul>
-  <li><a href="/symposium/archive/mstf102.tar.gz">mstf102.tar.gz (129KB)</a></li>
+  <li><a href="/symposium/archive/mstf103.tar.gz">mstf103.tar.gz</a>（2026年10月28日更新）</li>
+  <li><a href="/symposium/pdf/mstfsample103.pdf">原稿スタイルの解説及びスタイルファイルの使い方の説明（PDF）</a></li>
 </ul>
 
-<p><a href="/symposium/pdf/mstfsample102.pdf">原稿スタイルの解説及びスタイルファイルの使い方の説明</a> (PDF形式、117KB)</p>
+<p>交通流数理研究会の原稿スタイルファイル<code class="language-plaintext highlighter-rouge">mstf.sty</code>と，そのサンプル<code class="language-plaintext highlighter-rouge">sample.tex</code>です．
+<strong>既定の構成はLuaLaTeX＋jlreqです．</strong>
+タイトル，氏名，所属，概要などを書き換えて原稿を作成してください．
+アーカイブには，<code class="language-plaintext highlighter-rouge">mstf.sty</code>，<code class="language-plaintext highlighter-rouge">sample.tex</code>，<code class="language-plaintext highlighter-rouge">sample.pdf</code>，<code class="language-plaintext highlighter-rouge">makefile</code>，図の例<code class="language-plaintext highlighter-rouge">dummy.pdf</code>と旧形式の<code class="language-plaintext highlighter-rouge">dummy.eps</code>を同梱しています．</p>
 
-<h5 id="使い方">使い方</h5>
+<p>Ver. 1.03では，エンジン別の設定例と和文フォントの説明を追加し，図の例をPDF形式に変更しました．
+また，XeLaTeX＋bxjsarticleで全角幅の設定に失敗していた箇所を修正しています．
+Tectonicを使用する場合の設定例と実行手順も掲載しています．</p>
 
-<p>交通流数理研究会　原稿スタイルファイル(mstf.sty)と、そのサンプルファイル(sample.tex)です。原稿スタイルファイルはjlreqクラスやbxjsarticleクラス中で使う事を想定しています。コマンドにタイトルや名前などを入れて使います。</p>
+<h3 id="lualatexで使う場合既定の設定">LuaLaTeXで使う場合（既定の設定）</h3>
 
-<p>
-コンパイルは
-<pre>
-% uplatex sample.tex
-</pre>
-で出来ます。
-</p>
+<p>同梱の<code class="language-plaintext highlighter-rouge">sample.tex</code>は，次のクラス指定になっています．
+<code class="language-plaintext highlighter-rouge">jlreq</code>はLuaLaTeXに対応し，日本語処理用のLuaTeX-jaを読み込みます．<sup id="fnref:jlreq"><a href="#fn:jlreq" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></p>
 
-<h4 id="platex用スタイルファイル">platex用スタイルファイル</h4>
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[lualatex,twocolumn]</span><span class="p">{</span>jlreq<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>mstf<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>graphicx<span class="p">}</span>
+</code></pre></div></div>
 
-<p>以下の二つは同じ内容です。</p>
+<p>展開したディレクトリで，次のコマンドを実行します．</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lualatex sample.tex
+lualatex sample.tex
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">sample.pdf</code>が生成されます．2回の実行は，図番号や参考文献などの相互参照を解決するためです．
+LuaLaTeXでは<code class="language-plaintext highlighter-rouge">dvipdfmx</code>オプションも，DVIからPDFへの変換操作も不要です．
+同梱のmakefileを使う場合は，<code class="language-plaintext highlighter-rouge">make pdf</code>で生成できます．</p>
+
+<h4 id="和文フォントを指定する場合">和文フォントを指定する場合</h4>
+
+<p><code class="language-plaintext highlighter-rouge">jlreq</code>では<code class="language-plaintext highlighter-rouge">\usepackage{luatexja}</code>を重ねて指定する必要はありません．
+和文フォントを明示的に選ぶ場合には，例えばクラス指定の後に次を追加します．
+これはLuaTeX-jaの<code class="language-plaintext highlighter-rouge">luatexja-preset</code>を使って原ノ味フォントを指定する例です．<sup id="fnref:luatexja"><a href="#fn:luatexja" class="footnote" rel="footnote" role="doc-noteref">2</a></sup></p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="na">[haranoaji]</span><span class="p">{</span>luatexja-preset<span class="p">}</span>
+</code></pre></div></div>
+
+<p>手動で和文フォントを指定する場合は，<code class="language-plaintext highlighter-rouge">luatexja-fontspec</code>の<code class="language-plaintext highlighter-rouge">\setmainjfont</code>や<code class="language-plaintext highlighter-rouge">\setsansjfont</code>を使います．
+<code class="language-plaintext highlighter-rouge">fontspec</code>で欧文フォントを指定するだけでは，和文フォントの設定にはなりません．
+使用する和文フォントは，あらかじめインストールしてください．</p>
+
+<p>LuaLaTeXで<code class="language-plaintext highlighter-rouge">bxjsarticle</code>を使用する場合は，クラス指定を次に置き換えます．
+<code class="language-plaintext highlighter-rouge">ja=standard</code>で日本語処理を有効にします．<sup id="fnref:bxjscls"><a href="#fn:bxjscls" class="footnote" rel="footnote" role="doc-noteref">3</a></sup></p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[lualatex,ja=standard,twocolumn]</span><span class="p">{</span>bxjsarticle<span class="p">}</span>
+</code></pre></div></div>
+
+<p>このクラスで原ノ味フォントを明示する場合は，クラスオプションに<code class="language-plaintext highlighter-rouge">jafont=haranoaji</code>を追加します．
+対応する<code class="language-plaintext highlighter-rouge">luatexja-preset</code>もクラスが読み込みます．</p>
+
+<h3 id="uplatexで使う場合">upLaTeXで使う場合</h3>
+
+<p><code class="language-plaintext highlighter-rouge">sample.tex</code>冒頭のクラス指定を，次のいずれか一つに変更します．
+<code class="language-plaintext highlighter-rouge">jlreq</code>と<code class="language-plaintext highlighter-rouge">bxjsarticle</code>の両方を使用できます．<sup id="fnref:jlreq:1"><a href="#fn:jlreq" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> <sup id="fnref:bxjscls:1"><a href="#fn:bxjscls" class="footnote" rel="footnote" role="doc-noteref">3</a></sup></p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[uplatex,twocolumn,dvipdfmx]</span><span class="p">{</span>jlreq<span class="p">}</span>
+<span class="c">% bxjsarticleを使う場合は，上の行を次の行に置き換える：</span>
+<span class="c">% \documentclass[uplatex,ja=standard,twocolumn,dvipdfmx]{bxjsarticle}</span>
+</code></pre></div></div>
+
+<p>LuaLaTeX専用の<code class="language-plaintext highlighter-rouge">luatexja-preset</code>などを追加していた場合は，その指定を外してください．
+コンパイルとPDFへの変換は，次の順で実行します．</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uplatex sample.tex
+uplatex sample.tex
+dvipdfmx sample.dvi
+</code></pre></div></div>
+
+<p>makefileを使う場合は，<code class="language-plaintext highlighter-rouge">make pdf TEX=uplatex</code>を実行します．
+サンプルでは，日本語PDFしおり用の<code class="language-plaintext highlighter-rouge">pxjahyper</code>を<code class="language-plaintext highlighter-rouge">hyperref</code>の後に読み込みます．</p>
+
+<h3 id="xelatexで使う場合">XeLaTeXで使う場合</h3>
+
+<p><code class="language-plaintext highlighter-rouge">jlreq</code>はXeLaTeXには対応していないため，<code class="language-plaintext highlighter-rouge">bxjsarticle</code>を使用します．
+<code class="language-plaintext highlighter-rouge">ja=standard</code>を指定すると，日本語処理用の<code class="language-plaintext highlighter-rouge">zxjatype</code>が読み込まれます．<sup id="fnref:jlreq:2"><a href="#fn:jlreq" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> <sup id="fnref:bxjscls:2"><a href="#fn:bxjscls" class="footnote" rel="footnote" role="doc-noteref">3</a></sup></p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[xelatex,ja=standard,twocolumn]</span><span class="p">{</span>bxjsarticle<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">dvipdfmx</code>オプションは付けません．LuaLaTeX専用パッケージの指定は外し，次を実行します．</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xelatex sample.tex
+xelatex sample.tex
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">sample.pdf</code>が生成されます．別途DVIからPDFに変換する操作は不要です．
+makefileを使う場合は，<code class="language-plaintext highlighter-rouge">make pdf TEX=xelatex</code>を実行します．
+和文フォントのプリセットには<code class="language-plaintext highlighter-rouge">zxjafont</code>が使われます．
+例えばクラスオプションへ<code class="language-plaintext highlighter-rouge">jafont=haranoaji</code>を追加すると，原ノ味フォントの設定と<code class="language-plaintext highlighter-rouge">zxjafont</code>の読み込みをクラスが行います．</p>
+
+<h3 id="tectonicで使う場合">Tectonicで使う場合</h3>
+
+<p>TectonicはXeTeXを基にした組版システムです．
+このサンプルでは，XeLaTeXの場合と同じ<code class="language-plaintext highlighter-rouge">bxjsarticle</code>の設定を使用します．
+必要な再実行はTectonicが自動で行います．<sup id="fnref:tectonic"><a href="#fn:tectonic" class="footnote" rel="footnote" role="doc-noteref">4</a></sup></p>
+
+<p><code class="language-plaintext highlighter-rouge">sample.tex</code>冒頭のクラス指定を，次に置き換えてください．</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[xelatex,ja=standard,twocolumn]</span><span class="p">{</span>bxjsarticle<span class="p">}</span>
+</code></pre></div></div>
+
+<p>クラスオプションは<code class="language-plaintext highlighter-rouge">tectonic</code>ではなく<code class="language-plaintext highlighter-rouge">xelatex</code>を指定します．
+既定のLuaLaTeX＋jlreqのままでは使用できないので，クラス指定を切り替え，
+LuaLaTeX専用パッケージを追加していた場合はその指定も外してください．
+<code class="language-plaintext highlighter-rouge">dvipdfmx</code>オプションは付けず，図には<code class="language-plaintext highlighter-rouge">dummy.pdf</code>を使用します．
+和文フォントの設定は，上のXeLaTeXの説明と共通です．</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tectonic sample.tex
+</code></pre></div></div>
+
+<p>コマンドを1回実行すると，必要な再実行を経て<code class="language-plaintext highlighter-rouge">sample.pdf</code>が生成されます．
+別途DVIからPDFへ変換する操作は不要です．
+makefileを使う場合は，<code class="language-plaintext highlighter-rouge">make pdf TEX=tectonic</code>を実行します．</p>
+
+<p>Tectonicは，初回や未取得のパッケージを使う際に，必要なTeX資源をダウンロードしてキャッシュします．
+その際はネットワーク接続が必要です．
+単一ファイルの上記手順では，<code class="language-plaintext highlighter-rouge">Tectonic.toml</code>の作成は不要です．
+ログを残して確認したい場合は，<code class="language-plaintext highlighter-rouge">tectonic --keep-logs sample.tex</code>と実行してください．</p>
+
+<p><strong>エンジンを切り替える際は，前の実行でできた<code class="language-plaintext highlighter-rouge">.aux</code>，<code class="language-plaintext highlighter-rouge">.out</code>などの補助ファイルを削除してください．</strong>
+<code class="language-plaintext highlighter-rouge">make clean</code>でも削除できますが，生成済みの<code class="language-plaintext highlighter-rouge">sample.pdf</code>と<code class="language-plaintext highlighter-rouge">sample.dvi</code>も削除するので，必要に応じて保存してから再生成してください．</p>
+
+<h3 id="旧版uplatexlualatex用ver-102">旧版：upLaTeX・LuaLaTeX用（Ver. 1.02）</h3>
+
+<p>従来の配布物を参照できるよう，Ver. 1.02も残しています．</p>
 
 <ul>
-  <li><a href="/symposium/archive/mstf101.tar.gz">mstf101.tar.gz (3KB)</a></li>
-  <li><a href="/symposium/archive/mstf101.lzh">mstf101.lzh (3KB)</a></li>
+  <li><a href="/symposium/archive/mstf102.tar.gz">mstf102.tar.gz</a></li>
+  <li><a href="/symposium/pdf/mstfsample102.pdf">Ver. 1.02の原稿スタイルの説明（PDF）</a></li>
 </ul>
 
-<p><a href="/symposium/pdf/mstfsample.pdf">原稿スタイルの解説及びスタイルファイルの使い方の説明</a> (PDF形式、36KB)</p>
+<p>新規に原稿を作成する場合は，上記の最新版Ver. 1.03を使用してください．</p>
 
-<h5 id="使い方-1">使い方</h5>
+<h3 id="旧版platex用ver-101">旧版：pLaTeX用（Ver. 1.01）</h3>
 
-<p>交通流数理研究会　原稿スタイルファイル(mstf.sty)と、そのサンプルファイル(sample.tex)です。コマンドにタイトルや名前などを入れて使います。</p>
+<p>以前の環境向けに旧版も残しています．次の二つは同じ内容です．</p>
 
-<p>
-コンパイルは
-<pre>
-% platex sample.tex
-</pre>
-で出来ますが、同封の makefileのTARGETを変えて使うのが楽だと思います。
-</p>
+<ul>
+  <li><a href="/symposium/archive/mstf101.tar.gz">mstf101.tar.gz</a></li>
+  <li><a href="/symposium/archive/mstf101.lzh">mstf101.lzh</a></li>
+  <li><a href="/symposium/pdf/mstfsample.pdf">旧版の原稿スタイルの説明（PDF）</a></li>
+</ul>
+
+<p>旧版は<code class="language-plaintext highlighter-rouge">platex sample.tex</code>でコンパイルできます．
+新規に原稿を作成する場合は，最新版と上記の実行手順を使用してください．</p>
 
 <h2 id="スタイルの説明">スタイルの説明</h2>
 
 <h3 id="投稿原稿について">投稿原稿について</h3>
 
-<p>
-　原稿はどのようなフォーマットで用意してもかまいませんが、
-最終的にPDFで投稿するようにしてください。
-LaTeXを使う場合は本研究会で用意したスタイルファイルを使うと便利です。
-スタイルファイルを使わない場合(Word等を使う場合)も、なるべく
-フォーマットを本原稿に似せるようにしてください。
-以下、スタイルファイルの使い方も含めてフォーマットを解説します。
-</p>
-<p>
-　必要なファイルは、
+<p>原稿は最終的にPDF形式で投稿してください．LaTeXを使う場合は，本研究会のスタイルファイルを使うと便利です．
+Wordなどを使う場合も，なるべくサンプルと同じ体裁にしてください．</p>
+
+<p>LaTeX原稿には，次のファイルを使用します．</p>
+
 <ul>
-<li> mstf.sty (スタイルファイル)</li>
-<li> sample.tex (サンプルTexソース)</li>
+  <li><code class="language-plaintext highlighter-rouge">mstf.sty</code>：スタイルファイル</li>
+  <li><code class="language-plaintext highlighter-rouge">sample.tex</code>：サンプルのTeXソース</li>
+  <li><code class="language-plaintext highlighter-rouge">dummy.pdf</code>：サンプルで使用する図（図を使わない場合は不要）</li>
 </ul>
-コンパイルにはLaTeX 2εが必要です。
-基本的にsample.texの該当箇所を書き換えるだけで原稿が準備されるように
-なっております。
-</p>
+
+<p>使用するエンジンと文書クラスに加え，<code class="language-plaintext highlighter-rouge">mstf.sty</code>が読み込む<code class="language-plaintext highlighter-rouge">iftex</code>，図用の<code class="language-plaintext highlighter-rouge">graphicx</code>などが必要です．
+エンジン別の設定は，上の説明と<code class="language-plaintext highlighter-rouge">sample.tex</code>冒頭のコメントを参照してください．</p>
 
 <h3 id="原稿の体裁">原稿の体裁</h3>
 
-<p>
-投稿原稿には、順に次の情報を含めてください。
+<p>投稿原稿には，和文タイトル，和文氏名，和文所属，和文概要，英文タイトル，英文氏名，英文所属，英文概要，本文，参考文献の順に記載してください．</p>
 
-<ul>
-<li> 和文タイトル</li>
-<li> 和文氏名</li>
-<li> 和文所属</li>
-<li> 和文概要</li>
-<li> 英文タイトル</li>
-<li> 英文氏名</li>
-<li> 英文所属</li>
-<li> 英文概要</li>
-<li> 本文</li>
-<li> 参考文献</li>
-</ul>
-原稿はA4の大きさで用意してください。
-本文は一段組、二段組のどちらでもかまいませんが、4ページ以内としてください。
-一段組みにする場合は
-<pre>
-\documentclass[onecolumn]{jarticle}
-</pre>
-またはオプション無し、二段組にする場合は
-<pre>
-\documentclass[twocolumn]{jarticle}
-</pre>
-とtwocolumnオプションを指定してください。
-本文のフォントの大きさは10ポイント程度にしてください。
-</p>
+<p>原稿はA4判，本文のフォントは10ポイント程度とし，一段組または二段組で4ページ以内にしてください．
+既定のLuaLaTeX＋jlreqで一段組にする場合は，次のように指定します．</p>
 
-<p>
-タイトル、概要等は和文、英文双方で用意してください。
-概要には論文の目的，方法等概要を簡潔に記入してください。
-この中で数式，文献などを番号で引用せず、また脚注も用いないでください。
-また、概要の中では改行はしないでください。
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[lualatex,onecolumn]</span><span class="p">{</span>jlreq<span class="p">}</span>
+</code></pre></div></div>
 
-タイトル、概要などは、対応する命令の中に記入してください。
-対応表は以下の通りです。
-</p>
-<table border="1">
-<tr><td>内容</td><td>命令</td></tr>
-<tr><td>和文タイトル</td><td>\title{}</td></tr>
-<tr><td>英文タイトル</td><td>\titleE{}</td></tr>
-<tr><td>和文氏名</td><td>\author{}</td></tr>
-<tr><td>英文氏名</td><td>\authorE{}</td></tr>
-<tr><td>和文所属</td><td>\affiliation{}</td></tr>
-<tr><td>英文所属</td><td>\affiliationE{}</td></tr>
-<tr><td>和文概要</td><td>\abst{}</td></tr>
-<tr><td>英文概要</td><td>\abstrE{}</td></tr>
+<p>二段組にする場合は，<code class="language-plaintext highlighter-rouge">onecolumn</code>を<code class="language-plaintext highlighter-rouge">twocolumn</code>に置き換えます．
+他のエンジン・クラスでも，それぞれのクラス指定に<code class="language-plaintext highlighter-rouge">onecolumn</code>または<code class="language-plaintext highlighter-rouge">twocolumn</code>を指定してください．</p>
+
+<p>タイトル，概要などは和文・英文の双方を用意してください．
+概要には目的，方法，結果などを簡潔に記載し，数式・文献の番号引用，脚注，改行は入れないでください．
+各内容と命令の対応は次のとおりです．</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>内容</th>
+      <th>命令</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>和文タイトル</td>
+      <td><code class="language-plaintext highlighter-rouge">\title{}</code></td>
+    </tr>
+    <tr>
+      <td>英文タイトル</td>
+      <td><code class="language-plaintext highlighter-rouge">\titleE{}</code></td>
+    </tr>
+    <tr>
+      <td>和文氏名</td>
+      <td><code class="language-plaintext highlighter-rouge">\author{}</code></td>
+    </tr>
+    <tr>
+      <td>英文氏名</td>
+      <td><code class="language-plaintext highlighter-rouge">\authorE{}</code></td>
+    </tr>
+    <tr>
+      <td>和文所属</td>
+      <td><code class="language-plaintext highlighter-rouge">\affiliation{}</code></td>
+    </tr>
+    <tr>
+      <td>英文所属</td>
+      <td><code class="language-plaintext highlighter-rouge">\affiliationE{}</code></td>
+    </tr>
+    <tr>
+      <td>和文概要</td>
+      <td><code class="language-plaintext highlighter-rouge">\abst{}</code></td>
+    </tr>
+    <tr>
+      <td>英文概要</td>
+      <td><code class="language-plaintext highlighter-rouge">\abstE{}</code></td>
+    </tr>
+  </tbody>
 </table>
 
 <h3 id="図の入れ方">図の入れ方</h3>
 
-<p>
-図を入れるには
-figure環境の中で、\includegraphics命令を使います。
-キャプションの体裁などは以下のサンプルを参照してください。
-<pre>
-\begin{figure}[htbp]
-\includegraphics[width=1.0\linewidth]{dummy.eps}
-\caption{
-図の入れ方。図1、図2とキャプションに番号を振るようにしてください。
-}
-\label{fig_dummy}
-\end{figure}
-</pre>
-</p>
+<p><code class="language-plaintext highlighter-rouge">graphicx</code>パッケージを読み込み，<code class="language-plaintext highlighter-rouge">figure</code>環境の中で<code class="language-plaintext highlighter-rouge">\includegraphics</code>命令を使います．
+図はPDF形式を用意すると，LuaLaTeX・XeLaTeX・upLaTeX＋dvipdfmxで共通に使用できます．
+PNG・JPEG形式の画像も使用できます．<sup id="fnref:graphics"><a href="#fn:graphics" class="footnote" rel="footnote" role="doc-noteref">5</a></sup></p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{figure}</span>[htbp]
+  <span class="k">\includegraphics</span><span class="na">[width=1.0\linewidth]</span><span class="p">{</span>dummy.pdf<span class="p">}</span>
+  <span class="k">\caption</span><span class="p">{</span>PDF形式の図の取り込み例．<span class="p">}</span>
+  <span class="k">\label</span><span class="p">{</span>fig<span class="p">_</span>dummy<span class="p">}</span>
+<span class="nt">\end{figure}</span>
+</code></pre></div></div>
+
+<p>図番号は<code class="language-plaintext highlighter-rouge">\caption</code>が自動で付けます．本文からは<code class="language-plaintext highlighter-rouge">図\ref{fig_dummy}</code>で参照してください．
+LuaLaTeX・XeLaTeX用の原稿では，EPSを直接指定せず，PDFに変換した図を指定してください．
+EPSしかない場合は，例えば次のコマンドで変換します．</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>epstopdf dummy.eps
+</code></pre></div></div>
+
+<p>この変換にはepstopdfとGhostscriptが必要です．変換後は<code class="language-plaintext highlighter-rouge">\includegraphics{dummy.pdf}</code>と記述します．
+upLaTeX＋dvipdfmxではEPSも扱えますが，外部の変換環境に依存するため，PDFを用意する方法を勧めます．</p>
 
 <h3 id="参考文献の付け方">参考文献の付け方</h3>
 
-<p>参考文献は、本文の最後に「参考文献」というタイトルをつけて
-掲載してください。論文誌の場合は、著者名、雑誌名、巻号、ページ、発行年を
-記載してください。その際、巻号は太字で表記するようにしてください。
-書籍の場合は、著者名、書籍名、出版社、発行年を記載してください。</p>
+<p>参考文献は本文の最後に「参考文献」というタイトルで掲載してください．
+論文誌の場合は，著者名，雑誌名，巻号，ページ，発行年を記載し，巻号は太字にしてください．
+書籍の場合は，著者名，書籍名，出版社，発行年を記載してください．</p>
 
 <h2 id="使用例">使用例</h2>
 
-<p>
-　サンプルをそのままコンパイルするとこのようなレイアウトになります。<br />
-</p>
+<p>以下は最新版の<code class="language-plaintext highlighter-rouge">sample.tex</code>を，既定のLuaLaTeX＋jlreqでコンパイルしたPDFの1ページ目です．
+画像をクリックすると，<a href="/symposium/pdf/mstfsample103.pdf">説明PDFの全ページ</a>を開けます．</p>
 
-<p><img src="/symposium/assets/images/mstfsample.gif" alt="サンプルレイアウト" /></p>
+<p><a href="/symposium/pdf/mstfsample103.pdf"><img src="/symposium/assets/images/mstfsample103.png" alt="LuaLaTeX＋jlreqによる最新版サンプルの1ページ目" /></a></p>
 
 <h2 id="その他注意事項">その他注意事項</h2>
 
-<p>
-<ul>
-<li> UTF8、改行コードLFとなっておりますので、環境に合わせて適当に修正してください。</li>
-</ul>
-</p>
+<p>ソースはUTF-8，改行コードLFです．
+配布サンプルには使い方の説明も含まれます．実際の投稿原稿は，説明文を置き換えたうえでページ数と体裁を確認してください．</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:jlreq">
+      <p>原資料：jlreq README「What is this?」「Usage」．エンジン対応とクラス指定についての要約です．<a href="https://www.ctan.org/tex-archive/macros/jptex/latex/jlreq">公式README</a> <a href="#fnref:jlreq" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:jlreq:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:jlreq:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a></p>
+    </li>
+    <li id="fn:luatexja">
+      <p>原資料：LuaTeX-jaマニュアル「luatexja-fontspec」「luatexja-preset」．和文フォント設定についての要約です．<a href="https://ctan.org/pkg/luatexja">公式マニュアルの案内</a> <a href="#fnref:luatexja" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:bxjscls">
+      <p>原資料：BXjsclsマニュアル「標準和文ドライバ」のLuaLaTeX・XeLaTeXに関する説明．クラスオプションと自動読み込みについての要約です．<a href="https://github.com/zr-tex8r/BXjscls/blob/master/bxjscls-manual.tex">公式マニュアル</a> <a href="#fnref:bxjscls" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:bxjscls:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:bxjscls:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a></p>
+    </li>
+    <li id="fn:tectonic">
+      <p>原資料：Tectonic公式マニュアル「Overview」「V1 Command-Line Interface」「Build Your First Document」．XeTeXベースの実装，単一ファイルのコンパイル，自動再実行とキャッシュについての要約です．bxjsarticleを選ぶ手順は本サンプル向けの補足です．<a href="https://tectonic-typesetting.github.io/book/latest/">公式マニュアル</a>，<a href="https://tectonic-typesetting.github.io/book/latest/ref/v1cli.html">コマンドの説明</a>，<a href="https://tectonic-typesetting.github.io/book/latest/getting-started/first-document.html">自動再実行とキャッシュ</a> <a href="#fnref:tectonic" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:graphics">
+      <p>原資料：LaTeX graphics-defの<code class="language-plaintext highlighter-rouge">luatex.def</code>，<code class="language-plaintext highlighter-rouge">xetex.def</code>，<code class="language-plaintext highlighter-rouge">dvipdfmx.def</code>内の<code class="language-plaintext highlighter-rouge">Gin@extensions</code>・<code class="language-plaintext highlighter-rouge">Gin@rule</code>．対応画像形式の要約です．PDFで揃える手順は本サンプル向けの補足です．<a href="https://github.com/latex3/graphics-def">公式ドライバソース</a> <a href="#fnref:graphics" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
         </div>
 
